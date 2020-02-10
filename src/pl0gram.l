@@ -1,4 +1,5 @@
 %{
+#define YYSTYPE char*
 #include "pl0gram.tab.h"
 %}
 
@@ -40,7 +41,7 @@ Side    	[,;()\t\r\n ]
 {Do}			{return DO;}
 {Assign}		{return ASSIGN;}
 {Id}			{yylval = strdup(yytext); return ID;}
-{Number}		{yylval = strdup(yytext); printf("%s\n",yylval); return NUMBER;}
+{Number}		{yylval = strdup(yytext); return NUMBER;}
 {Add}			{return ADD;}
 {Sub}			{return SUB;}
 {MUL}			{return MUL;}
@@ -51,7 +52,7 @@ Side    	[,;()\t\r\n ]
 {Gt}			{return GT;}
 {Ge}			{return GE;}
 {Odd}			{return ODD;}
-{Side}    	{return SIDE;}
+{Side}    	
 
 %%
 

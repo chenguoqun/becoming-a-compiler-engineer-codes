@@ -4,7 +4,7 @@ build:
 	gcc lex.yy.c -o pl0flex -lfl 
 	flex src/pl0gram.l
 	bison -d src/pl0gram.y
-	gcc -o pl0parsing pl0gram.tab.c lex.yy.c -lfl
+	gcc -g -o pl0parsing pl0gram.tab.c lex.yy.c -lfl
 check:
 	./pl0parsing < test/test1.pl0
 clean:
